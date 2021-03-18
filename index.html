@@ -8,48 +8,89 @@
 </head>
 <body>
   <script type="text/javascript">
-    //1) Дан массив с числами. С помощью цикла выведите только те элементы массива, которые больше нуля и меньше 10-ти.
+   //1) Дан массив с числами. С помощью цикла выведите только те элементы массива, которые больше нуля и меньше 10-ти.
+/*
+let array = [1, 23, 2, 4, 11, 9, 25];
+for (let i = 0; i < array.length; i++) {
+  if(array[i] > 0 && array[i] < 10 ){
+    console.log(array[i]);
+  }
+}*/
+//Вариант с функцией
+let array = [1, 23, 2, 4, 11, 9, 25];
+function normNumber(arrFunc){
+for (let i = 0; i < arrFunc.length; i++) {
+  if(arrFunc[i] > 0 && arrFunc[i] < 10 ){
+    console.log(arrFunc[i]);
+  }
+}
+}
+normNumber(array);
 
-    let array = [1, 23, 2, 4, 11, 9, 25];
-    for (let i = 0; i < array.length; i++) {
-      if(array[i] > 0 && array[i] < 10 ){
-        console.log(array[i]);
-      }
+//2) Дан массив с числами. Найдите среднее арифметическое его элементов
+/*let sum = 0;
+for (let i = 0; i < array.length; i++) {
+  sum += array[i];
+  }
+  let res = sum / array.length;
+console.log(res);
+*/
+//вариант с функцией
+function arrAverage(arrayAve){
+  let sum = 0;
+  for (let i = 0; i < arrayAve.length; i++) {
+    sum += arrayAve[i];
     }
-    //2) Дан массив с числами. Найдите среднее арифметическое его элементов
-    let sum = 0;
-    for (let i = 0; i < array.length; i++) {
-      sum += array[i];
-      }
-      let res = sum / array.length;
-    console.log(res);
+    let res = sum / arrayAve.length;
+  return res;
 
+}
+console.log('Среднее арифметическое: ', arrAverage(array));
 
-    //3) Дан массив с числами. С помощью цикла проверьте, что в нем есть элемент со значением 5. Как только будет найден первый такой элемент - выведите 'Есть' и оборвите цикл. Если такого элемента нет - ничего не выводите.
+//3) Дан массив с числами. С помощью цикла проверьте, что в нем есть элемент со значением 5. Как только будет найден первый такой элемент - выведите 'Есть' и оборвите цикл. Если такого элемента нет - ничего не выводите.
 
-    let array1 = [1, 2, 32, 43, 123, 5, 6, 76, 8];
-    for (let i = 0; i < array1.length; i++) {
-      if(array1[i] == 5){
-        console.log('Есть');
-        break;
-      }
+let array1 = [1, 2, 32, 43, 123, 5, 6, 76, 8];
+/*for (let i = 0; i < array1.length; i++) {
+  if(array1[i] == 5){
+    console.log('Есть');
+    break;
+  }
+}
+*/
+// вариант с функцией/
+function numberSearch (arrSearch, value){
+  for (let i = 0; i < arrSearch.length; i++) {
+    if(arrSearch[i] == value){
+      console.log('Есть');
+      break;
     }
-    // 4) Создайте объект cat, name:'Stepan' и в этом объекте создайте метод voice, который при вызове себя у объекта cat будет выводить сообщение в консоль 'привет, меня зовут Stepan'.
+  }
+}
+numberSearch(array1, 5);
 
-    ступор, нужна помощь
+// 4) Создайте объект cat, name:'Stepan' и в этом объекте создайте метод voice, который при вызове себя у объекта cat будет выводить сообщение в консоль 'привет, меня зовут Stepan'.
 
+//ваша подсказка - cat = {name: Stepan, voice(){//тут тело метода}}
+let cat = {
+  name: 'Stepan',
+  voice(){
+    console.log('Привет, меня зовут', this.name);
+  },
+};
+cat.voice();
 
-    /*5. Исправить ошибки в оцифрованном тексте. Вам нужно только исправить следующие случаи: S-5, O-0, I-1, correct('L0ND0N') => 'LONDON'
-    correct('DUBL1N') => 'DUBLIN'
-    correct('51NGAP0RE') => 'SINGAPORE'
-    correct('BUDAPE5T') => 'BUDAPEST'
-    correct('PAR15') => 'PARIS
-    */
-    
-    function correct(str){
-    console.log(str.replace(/0/g, 'O').replace(/1/g, 'I').replace(/5/g, 'S')); //вычитал, чтобы заменить не только первое найденное значение, а и все остальные нужно поставить g
-    }
-    correct('51NGAP0RE');
+/*5. Исправить ошибки в оцифрованном тексте. Вам нужно только исправить следующие случаи: S-5, O-0, I-1, correct('L0ND0N') => 'LONDON'
+correct('DUBL1N') => 'DUBLIN'
+correct('51NGAP0RE') => 'SINGAPORE'
+correct('BUDAPE5T') => 'BUDAPEST'
+correct('PAR15') => 'PARIS
+*/
+
+function correct(str){
+console.log(str.replace(/0/g, 'O').replace(/1/g, 'I').replace(/5/g, 'S')); 
+}
+correct('51NGAP0RE');
+
   </script>
 
 </body>
